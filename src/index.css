@@ -1,0 +1,208 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Roboto Mono", sans-serif;
+  color: #252525;
+  background-color: #f7f2e9;
+  min-height: 100vh;
+  padding: 3.2rem;
+  border-bottom: 1.6rem solid #b64032;
+}
+
+/* Main container */
+
+.container {
+  max-width: 110rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4.8rem;
+}
+
+/* Header */
+
+.header {
+  text-align: center;
+  width: 100%;
+}
+
+.header h1 {
+  color: #b64032;
+  font-size: 4.8rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 500;
+}
+
+.tagline {
+  color: #65764b;
+  font-size: 1.6rem;
+  font-style: italic;
+  margin-top: 1.2rem;
+  letter-spacing: 2px;
+}
+
+/* Menu */
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3.2rem;
+  width: 100%;
+}
+
+.menu h2 {
+  font-size: 2.8rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 500;
+  padding: 1rem 0;
+  border-top: 2px solid #b64032;
+  border-bottom: 2px solid #b64032;
+}
+
+/* Pizza grid */
+
+.pizzas {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.4rem;
+  width: 100%;
+}
+
+/* Pizza cards */
+
+.pizza {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  background-color: #fffcf6;
+  border-radius: 1.6rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition:
+    transform 0.25s,
+    box-shadow 0.25s;
+}
+
+.pizza:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.pizza img {
+  width: 12rem;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 1.2rem;
+}
+
+.pizza h2,
+.pizza h3 {
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #b64032;
+}
+
+.pizza p {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  color: #666;
+}
+
+.pizza p:last-child {
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: #65764b;
+  margin-top: 0.8rem;
+}
+
+/* Sold out */
+
+.pizza.sold-out {
+  opacity: 0.6;
+}
+
+.pizza.sold-out img {
+  filter: grayscale(100%);
+}
+
+/* Footer */
+
+.footer {
+  font-size: 1.6rem;
+  text-align: center;
+}
+
+.order {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.4rem;
+}
+
+/* Order button */
+
+.btn {
+  color: white;
+  font-family: inherit;
+  border: none;
+  font-size: 1.5rem;
+  font-weight: 500;
+  background-color: #b64032;
+  padding: 1.6rem 3.6rem;
+  border-radius: 3rem;
+  cursor: pointer;
+  transition: all 0.25s;
+}
+
+.btn:hover {
+  background-color: #922d23;
+  transform: scale(1.05);
+}
+
+/* Responsive design */
+
+@media (max-width: 768px) {
+  body {
+    padding: 2rem;
+  }
+
+  .header h1 {
+    font-size: 3.2rem;
+  }
+
+  .pizzas {
+    grid-template-columns: 1fr;
+  }
+
+  .pizza {
+    padding: 1.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .pizza img {
+    width: 9rem;
+  }
+
+  .pizza {
+    gap: 1.2rem;
+  }
+
+  .header h1 {
+    font-size: 2.6rem;
+  }
+}
